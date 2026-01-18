@@ -1,0 +1,7 @@
+# Tiqiaa TView USB IR - Dependencies
+
+# USB communication
+pyusb>=1.2.1
+
+# Bundled libusb for Windows (eliminates need for separate libusb install)
+libusb-package>=1.0.26.1

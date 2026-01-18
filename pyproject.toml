@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tiqiaa-tview"
+version = "1.0.0"
+description = "Python library for Tiqiaa TView USB IR transceiver - learn and send IR codes"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Tiqiaa Python Library Contributors"}
+]
+keywords = [
+    "tiqiaa",
+    "infrared",
+    "ir",
+    "usb",
+    "remote",
+    "home-automation",
+    "nec-protocol"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Home Automation",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+]
+
+dependencies = [
+    "pyusb>=1.2.1",
+    "libusb-package>=1.0.26.1",
+]
+
+[project.optional-dependencies]
+gui = []  # Tkinter is included with Python
+
+[project.urls]
+"Homepage" = "https://github.com/kr0mka/tiqiaa-tview-python"
+"Bug Tracker" = "https://github.com/kr0mka/tiqiaa-tview-python/issues"
+"Original Protocol Work" = "https://gitlab.com/XenRE/tiqiaa-usb-ir"
+
+[project.scripts]
+tiqiaa-cli = "tiqiaa_cli:main"
+tiqiaa-gui = "tiqiaa_gui:main"
+
+[tool.setuptools.packages.find]
+include = ["tiqiaa*"]
+
+[tool.setuptools.package-data]
+tiqiaa = ["py.typed"]
